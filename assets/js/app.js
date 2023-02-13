@@ -101,19 +101,13 @@ const sortFilmsByYear = () => {
   displayFilms();
 };
 
-
-// 1. Afficher la liste des films dans la page HTML
-// Ajouter un film avec les condition demander dans l'exercice
 const addFilm = (e) => {
-  
   e.preventDefault();
- 
-  
+
   const name = document.getElementById("name").value;
   const years = document.getElementById("years").value;
   const authors = document.getElementById("authors").value;
 
-  
   if (name.length < 2) {
     Swal.fire({
       title: "Erreur dans le formulaire",
@@ -139,7 +133,7 @@ const addFilm = (e) => {
       title: "Erreur dans le formulaire",
       text: "Le nom de l'auteur doit avoir au moins 5 caractères",
       icon: "error",
-      timer: 5000, 
+      timer: 5000,
     });
     return;
   }
@@ -157,8 +151,10 @@ const addFilm = (e) => {
   });
 
   displayFilms();
-  
 };
+
+const form = document.getElementById("filmForm");
+form.addEventListener("submit", addFilm);
 
 fetch("http://www.omdbapi.com/?s=superhero&apikey=3147fdf")
   .then((response) => {
