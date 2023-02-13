@@ -1,0 +1,27 @@
+/* TODO */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#slider {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#slider img {
+  display: inline-block;
+  /* animation: slide 1s linear infinite; */
+}
+
+/* @keyframes slide {
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+
+body.theme-dark {
+  background-color: #ffffff;
+}

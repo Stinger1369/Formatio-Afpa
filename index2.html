@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- JavaScript files -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.3.js"
+    ></script>
+
+    <script src="assets/js/app1.js" defer></script>
+  </head>
+
+  <body class="bg-gray-800 theme-light">
+    <div class="flex overflow-hidden">
+      <div class="w-full" id="slider"></div>
+    </div>
+    <header class="bg-gray-900 p-4 flex items-center justify-between">
+      <div>
+        <a href="index.html">
+          <h1 class="text-white font-bold">
+            <span class="text-4xl text-green-400">AFPA</span> MOVIE
+          </h1>
+        </a>
+      </div>
+      <nav class="flex">
+        <a
+          class="px-4 py-2 text-white hover:bg-gray-800 rounded mr-4"
+          href="index.html"
+          >Liste des films</a
+        >
+        <a class="px-4 py-2 text-white hover:bg-gray-800 rounded" href="#"
+          >Rechercher un film</a
+        >
+        <div class="mode-toggle-container pt-2">
+          <button class="mode-toggle-button" id="toggle-mode-button">
+            <i class="fas fa-moon text-white"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Main -->
+    <div class="container mx-auto">
+      <div class="flex">
+        <aside class="w-1/5 p-4">
+          <h1 class="text-2xl font-bold mb-4">Recherche Movie</h1>
+          <form id="form">
+            <div class="flex mb-4">
+              <input
+                type="text"
+                class="w-32 p-2 rounded border border-gray-400"
+                id="movieTitle"
+                placeholder=" Entrer le titre"
+              />
+            </div>
+            <div class="flex mb-4">
+              <input
+                type="text"
+                class="w-32 p-2 rounded border border-gray-400"
+                id="movieYear"
+                placeholder="Entrer l'année"
+              />
+            </div>
+            <div class="mb-4">
+              <select
+                class="p-2 rounded border border-gray-400 text-black"
+                id="movieType"
+              >
+                <option value="">tout</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+              </select>
+            </div>
+            <button
+              type="button"
+              class="bg-blue-500 text-white p-2 hover:bg-blue-700 rounded-lg shadow-lg"
+              id="submitBtn"
+            >
+              Chercher
+            </button>
+          </form>
+        </aside>
+        <main class="w-4/5 p-4">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-4 mt-4 items-center text-center flex justify-center"
+            id="movieResults"
+          ></div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="flex justify-center">
+      <div
+        id="pagination"
+        class="flex flex-col md:flex-row justify-between items-center p-2"
+        style="display: none"
+      >
+        <button
+          id="nextBtn"
+          class="bg-gray-400 text-white py-2 px-4 rounded mb-2 md:mb-0"
+        >
+          Suivant
+        </button>
+        <div class="flex flex-col items-center md:flex-row">
+          <span
+            id="currentPage"
+            class="text-4xl font-bold mr-2 md:mr-8 mb-2 md:mb-0"
+            >1</span
+          >
+          <div id="pageNumbers" class="flex flex-wrap cursor-pointer"></div>
+        </div>
+        <button
+          id="previousBtn"
+          class="bg-gray-400 text-white py-2 px-4 rounded mb-2 md:mb-0"
+        >
+          Précidet
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!-- Footer content goes here 
+<footer class="flex justify-center bg-gray-800 items-center" id="footer">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-l" id="prev">Précédent</button>
+  <p class="text-center font-bold text-blue-100">
+    Page <span id="pageNumber">1</span> sur <span id="totalPages"></span>
+  </p>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r" id="next">Suivant</button>
+</footer> -->

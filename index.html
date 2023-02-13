@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Médiatèque</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+       <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/assets/js/app.js" defer></script>
+  </head>
+<body class=" bg-gray-500 theme-light">
+<div class="flex overflow-hidden">
+  <div class="w-full" id="slider">
+  </div>
+</div>
+    <header class="bg-gray-900 p-4 flex items-center justify-between">
+      <div>
+        <a href="#">
+          <h1 class="text-white font-bold"> <span class=" text-4xl text-green-400">AFPA</span>  MOVIE</h1>
+        </a>
+      </div>
+      <nav class="flex">
+        <a
+          class="px-4 py-2 text-white hover:bg-gray-800 rounded mr-4"
+          href="index.html"
+          >Liste de films</a
+        >
+        <a
+          class="px-4 py-2 text-white hover:bg-gray-800 rounded"
+          href="index2.html"
+          >Rechercher un film</a
+        >
+                <div class="mode-toggle-container pt-2">
+          <button class="mode-toggle-button" id="toggle-mode-button">
+            <i class="fas fa-moon text-white"></i>
+          </button>
+        </div>
+        
+      </nav>
+    </header>
+    <div class="container mx-auto flex flex-col items-center  ">
+      <h1 class="text-3xl font-bold mb-4  ">Liste des films</h1>
+      <div class="mb-4 flex items-center">
+        <select id="filter" class="border border-gray-500 px-4 py-2 w-64">
+          <option value="all">Tous</option>
+          <option value="name">Titre</option>
+          <option value="years">Année</option>
+        </select>
+        <button
+          class="bg-red-500 text-white px-4 py-2 ml-4"
+          onclick="filterFilms()"
+        >
+          Filtrer
+        </button>
+      </div>
+      <table class="w-full table-auto">
+        <thead>
+          <tr class="bg-gray-800 text-white">
+            <th class="px-4 py-2">Titre</th>
+            <th class="px-4 py-2">Année</th>
+            <th class="px-4 py-2">Réalisateur</th>
+            <th class="px-4 py-2"></th>
+          </tr>
+        </thead>
+        <tbody id="film-list"></tbody>
+      </table>
+      <form class="mt-8" onsubmit="addFilm(event)">
+        <div class="flex flex-wrap mb-4">
+          <input
+            id="name"
+            class="border border-gray-500 px-4 py-2 mr-4 w-full sm:w-64"
+            type="text"
+            placeholder="Nom du film"
+          />
+          <input
+            id="years"
+            class="border border-gray-500 px-4 py-2 mr-4 w-full sm:w-64"
+            type="text"
+            placeholder="Date de sortie"
+          />
+          <input
+            id="authors"
+            class="border border-gray-500 px-4 py-2 mr-4 w-full sm:w-64"
+            type="text"
+            placeholder="Réalisateur"
+          />
+        </div>
+        <div>
+          <button class="bg-green-500 text-white px-4 py-2">Ajouter</
+        </div>
+      </form>
+      
+    </div>
+  </body>
+</html>
